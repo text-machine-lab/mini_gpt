@@ -2,6 +2,13 @@
 
 This repository has code to filter data from exisiting corpora based on child vocabulary and train small language models on this filtered data
 
+<p align="center">
+    <img
+         src="/images/method.pdf"
+         width="50%"
+         height="50%">
+</p>
+
 ## Installation
 
 ```bash
