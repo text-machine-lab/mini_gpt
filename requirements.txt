@@ -1,0 +1,9 @@
+torch
+transformers
+datasets
+tqdm
+wandb
+optimum
+accelerate
+loguru
+deepspeed
