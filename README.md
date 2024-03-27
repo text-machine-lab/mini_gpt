@@ -1,4 +1,5 @@
-# mini_gpt
+# Emergent Abilities in Reduced-Scale Generative Language Model
+
 
 This repository has code to filter data from exisiting corpora based on child vocabulary and train small language models on this filtered data
 
@@ -12,17 +13,17 @@ This repository has code to filter data from exisiting corpora based on child vo
 ## Installation
 
 ```bash
-git clone git@github.com:SherinBojappa/small_language_models.git
-cd small_language_models
+git clone git@github.com:text-machine-lab/mini_gpt.git
+cd mini_gpt
 pip install -r requirements.txt
 ```
 
 ## Usage
 
 The tokenizer for filtering is from [filter_vocab_cpp](https://github.com/Guitaricet/filter_vocab_cpp).<br>
-The object file for the text tokenizer is in ```src/text_filter.cpython-311-x86_64-linux-gnu.so```<br>
+Compile the  C++ based filtration code and copy over the object fileto the src directory.
 
-Downloading the SlimPajama dataset using git lfs:
+## Downloading the SlimPajama dataset using git lfs:
 ```bash
 git lfs install
 git clone https://huggingface.co/datasets/cerebras/SlimPajama-627B
@@ -34,7 +35,7 @@ For gathering the unfiltered dataset:
 python SlimPajama_unfiltered.py
 ```
 
-For Vocab filtering:
+For Vocab filtering, use the following command per chunk:
 <!-- ```bash
 python src/vocab_utils.py --dataset_name redpajama \
      --subset common_crawl \
@@ -49,7 +50,7 @@ python SlimPajama_filtering.py  --chunk_id 1
 notebooks/filtering_dev_aug14.ipynb
 ``` -->
 
-For creating the minigpt dataset, counting the number of tokens in the filtered dataset, analysis of the filtered dataset and the tokenizers use the notebook ```notebooks/count_tokens.ipynb```
+For creating the minigpt dataset, counting the number of tokens in the filtered dataset, analysis of the filtered dataset use the notebook ```notebooks/2.0-dataset-statistics.ipynb```
 
 To train BPE tokenizer:
 ```bash
@@ -66,3 +67,14 @@ python -u -m accelerate.commands.launch main.py \
      --chkpt_dir ../models/SlimPajama_Nov23_context128_vocab_21k/filtered/hidden_32_num_layer_8_int_128 \
      --int_size 128 --rope_theta 20
 ```
+
+For applying position interpolation on pre-trained models use the notebook
+```notebooks/1.0-rope-pi.ipynb```
+
+To filter downstream  evaluation datasets based on AO-Childes vocabulary use the notebook
+```notebooks/4.0-dataset_filtering.ipynb```
+
+To get generations from the pre-trained and baseline models use
+```notebooks/3.0-model-generations.ipynb```
+
+## Citation
