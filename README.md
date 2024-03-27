@@ -51,18 +51,11 @@ python create_tokenizer.py --dataset_path ./dataset \
     --save_dir ./tokenizer
 ```
 
-For training a language model:
-```bash
-python src/main.py --num_epochs 1000 \
-    --eval_every_steps 1000000 \
-    --lr 1e-3
-```
-
 For training a language model with distributed training:
 ```bash
-python -u -m accelerate.commands.launch main_optimized.py \
+python -u -m accelerate.commands.launch main.py \
      --lr 2.8e-3 --num_warmup_steps 1000 --num_layers 8 \
      --hidden_size 32 --use_tokenizer filtered \
-     --chkpt_dir /mnt/shared_home/smuckati/minigpt/models/SlimPajama_Nov23_context128_vocab_21k/filtered/hidden_32_num_layer_8_int_128 \
+     --chkpt_dir ../models/SlimPajama_Nov23_context128_vocab_21k/filtered/hidden_32_num_layer_8_int_128 \
      --int_size 128 --rope_theta 20
 ```
