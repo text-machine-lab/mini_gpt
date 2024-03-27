@@ -4,9 +4,9 @@ This repository has code to filter data from exisiting corpora based on child vo
 
 <p align="center">
     <img
-         src="/images/method.pdf"
-         width="50%"
-         height="50%">
+         src="images/method.png"
+         width="100%"
+         height="100%">
 </p>
 
 ## Installation
