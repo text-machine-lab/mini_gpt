@@ -1,4 +1,4 @@
-# Emergent Abilities in Reduced-Scale Generative Language Model
+# Emergent Abilities in Reduced-Scale Generative Language Models
 
 
 This repository has code to filter data from exisiting corpora based on child vocabulary and train small language models on this filtered data
@@ -35,7 +35,7 @@ For gathering the unfiltered dataset:
 python SlimPajama_unfiltered.py
 ```
 
-For Vocab filtering, use the following command per chunk:
+## For Vocab filtering, use the following command per chunk:
 <!-- ```bash
 python src/vocab_utils.py --dataset_name redpajama \
      --subset common_crawl \
@@ -50,16 +50,15 @@ python SlimPajama_filtering.py  --chunk_id 1
 notebooks/filtering_dev_aug14.ipynb
 ``` -->
 
-For creating the minigpt dataset, counting the number of tokens in the filtered dataset, analysis of the filtered dataset use the notebook ```notebooks/2.0-dataset-statistics.ipynb```
 
-To train BPE tokenizer:
+## To train BPE tokenizer:
 ```bash
 python create_tokenizer.py --dataset_path ./dataset \
     --vocab_size 15_000 \
     --save_dir ./tokenizer
 ```
 
-For training a language model with distributed training:
+## For training a language model with distributed training:
 ```bash
 python -u -m accelerate.commands.launch main.py \
      --lr 2.8e-3 --num_warmup_steps 1000 --num_layers 8 \
@@ -67,6 +66,8 @@ python -u -m accelerate.commands.launch main.py \
      --chkpt_dir ../models/SlimPajama_Nov23_context128_vocab_21k/filtered/hidden_32_num_layer_8_int_128 \
      --int_size 128 --rope_theta 20
 ```
+## Notebooks
+For creating the minigpt dataset, counting the number of tokens in the filtered dataset, analysis of the filtered dataset use the notebook ```notebooks/2.0-dataset-statistics.ipynb```
 
 For applying position interpolation on pre-trained models use the notebook
 ```notebooks/1.0-rope-pi.ipynb```
