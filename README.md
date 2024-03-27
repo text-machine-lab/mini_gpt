@@ -58,7 +58,7 @@ python create_tokenizer.py --dataset_path ./dataset \
     --save_dir ./tokenizer
 ```
 
-## For training a language model with distributed training:
+## For pre-training a language model with distributed training:
 ```bash
 python -u -m accelerate.commands.launch main.py \
      --lr 2.8e-3 --num_warmup_steps 1000 --num_layers 8 \
