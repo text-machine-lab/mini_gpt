@@ -23,6 +23,8 @@ pip install -r requirements.txt
 The tokenizer for filtering is from [filter_vocab_cpp](https://github.com/Guitaricet/filter_vocab_cpp).<br>
 Compile the  C++ based filtration code and copy over the object fileto the src directory.
 
+The vocabulary used for simplification of pre-training data  can be found in ```data/AOChildes_word_frequency.csv``` This vocabulary is based on child-directed speech transcripts that can be found [here](https://github.com/UIUCLearningLanguageLab/AOCHILDES)
+
 ## Downloading the SlimPajama dataset using git lfs:
 ```bash
 git lfs install
