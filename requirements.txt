@@ -7,3 +7,6 @@ optimum
 accelerate
 loguru
 deepspeed
+matplotlib
+pandas
+ipython
