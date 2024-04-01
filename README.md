@@ -1,7 +1,7 @@
 # Emergent Abilities in Reduced-Scale Generative Language Models
 
 
-This repository has code to filter data from exisiting corpora based on child vocabulary and train small language models on this filtered data
+This repository has code to filter data from exisiting corpora based on child vocabulary and train small language models on this filtered data.
 
 <p align="center">
     <img
@@ -52,6 +52,8 @@ python SlimPajama_filtering.py  --chunk_id 1
 notebooks/filtering_dev_aug14.ipynb
 ``` -->
 
+## Pre-training data:
+The pre-training data which consits of vocabulary filtered SlimPajama dataset can be found here [22B](https://huggingface.co/datasets/text-machine-lab/vocab_filtered_dataset_22B) and [2.1B](https://huggingface.co/datasets/text-machine-lab/vocab_filtered_dataset_2.1B)
 
 ## To train BPE tokenizer:
 ```bash
