@@ -83,7 +83,7 @@ To get generations from the pre-trained and baseline models use
 ```notebooks/3.0-model-generations.ipynb```
 
 ## Citation
-```bash
+```
 @misc{muckatira2024emergent,
       title={Emergent Abilities in Reduced-Scale Generative Language Models},
       author={Sherin Muckatira and Vijeta Deshpande and Vladislav Lialin and Anna Rumshisky},
